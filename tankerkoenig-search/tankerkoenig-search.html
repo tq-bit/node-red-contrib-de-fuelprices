@@ -1,6 +1,6 @@
 <script type="text/javascript">
 
-  RED.nodes.registerType('tankerkoenig-client', {
+  RED.nodes.registerType('tankerkoenig-search', {
     category: 'tankerkoenig',
     name: 'tankerkoenig',
     color: '#7EC8E3',
@@ -16,12 +16,12 @@
     outputs: 1,
     icon: 'font-awesome/fa-car',
     label: function () {
-      return this.name || 'tankerkoenig-client';
+      return this.name || 'tankerkoenig-search';
     }
   });
 </script>
 
-<script type="text/html" data-template-name="tankerkoenig-client">
+<script type="text/html" data-template-name="tankerkoenig-search">
   <div class="form-row">
 		<label for="node-input-config"><i class="fa fa-cogs"></i> Config </label>
 		<input type="text" id="node-input-config" />
@@ -61,7 +61,7 @@
   </div>
 </script>
 
-<script type="text/html" data-help-name="tankerkoenig-client">
+<script type="text/html" data-help-name="tankerkoenig-search">
 
   <p>
     Node to request data from the tankerkoening API

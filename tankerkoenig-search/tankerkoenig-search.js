@@ -15,7 +15,7 @@ module.exports = function (RED) {
 
 	function assembleUrl(config) {
 		function assembleQuery({ lon, lat, radius, fuelType, apikey }) {
-			return `lng=${lon}&lat=${lat}&rad=${radius}&type=${fuelType}&apikey=${apikey}`;
+			return `lng=${lon}&lat=${lat}&rad=${radius}&type=${fuelType}&sort=price&apikey=${apikey}`;
 		}
 
 		return `${ROOT_URL}?${assembleQuery(config)}`;
@@ -64,5 +64,5 @@ module.exports = function (RED) {
 			RED.log.error(error);
 		}
 	}
-	RED.nodes.registerType('tankerkoenig-client', createTankerkoenigClient);
+	RED.nodes.registerType('tankerkoenig-search', createTankerkoenigClient);
 };

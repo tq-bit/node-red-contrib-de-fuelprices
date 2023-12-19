@@ -27,7 +27,7 @@
     "version": ">=3.0.2",
     "nodes": {
       "tankerkoenig-config": "tankerkoenig-config/tankerkoenig-config.js",
-      "tankerkoenig-client": "tankerkoenig-client/tankerkoenig-client.js"
+      "tankerkoenig-search": "tankerkoenig-search/tankerkoenig-search.js"
     }
   },
   "dependencies": {

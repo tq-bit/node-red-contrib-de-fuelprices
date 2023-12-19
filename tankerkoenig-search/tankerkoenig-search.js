@@ -4,11 +4,11 @@ const ROOT_URL = 'https://creativecommons.tankerkoenig.de/json/list.php';
 
 function assembleConfig(msg, node) {
 	return {
-		lon: msg.lon || node.lon,
-		lat: msg.lat || node.lat,
-		radius: msg.radius || node.radius,
-		fuelType: msg.fuelType || node.fuelType,
-		sort: msg.sort || node.sort,
+		lon: node.lon || msg.lon,
+		lat: node.lat || msg.lat,
+		radius: node.radius || msg.radius,
+		fuelType: node.fuelType || msg.fuelType,
+		sort: node.sort || msg.sort,
 		apikey: node.apikey,
 	};
 }

@@ -40,7 +40,6 @@ module.exports = function (RED) {
 		try {
 			const [data, error] = await fetchFuelData(msg, node);
 			if (error) throw error;
-			console.log(data);
 			msg.payload = data;
 			send(msg);
 			done();

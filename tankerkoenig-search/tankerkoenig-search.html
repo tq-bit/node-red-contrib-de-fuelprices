@@ -10,6 +10,7 @@
       lat: { value: 521.2 },
       radius: { value: 25 },
       fuelType: { value: "" },
+      sort: { value: "" },
       name: { value: "" },
     },
     inputs: 1,
@@ -17,6 +18,30 @@
     icon: 'font-awesome/fa-car',
     label: function () {
       return this.name || 'tankerkoenig-search';
+    },
+
+    oneditprepare: function () {
+      $("#node-input-fuelType").typedInput({
+        type: "fuelType", types: [{
+          value: "fuelType",
+          options: [
+            { value: "e5", label: "E5 Gasoline" },
+            { value: "e10", label: "E10 Gasoline" },
+            { value: "diesel", label: "Diesel" },
+            { value: "all", label: "All" },
+          ]
+        }]
+      })
+
+      $("#node-input-sort").typedInput({
+        type: "sort", types: [{
+          value: "sort",
+          options: [
+            { value: "price", label: "Price" },
+            { value: "dist", label: "Distance" },
+          ]
+        }]
+      })
     }
   });
 </script>
@@ -28,19 +53,23 @@
 	</div>
   <div class="form-row">
 		<label for="node-input-lon"><i class="fa fa-globe"></i> Longitude </label>
-		<input type="number" id="node-input-lon" />
+		<input type="number" min="-180" max="180" id="node-input-lon"  />
 	</div>
   <div class="form-row">
 		<label for="node-input-lat"><i class="fa fa-globe"></i> Latitude </label>
-		<input type="number" id="node-input-lat" />
+		<input type="number" min="-180" max="180" id="node-input-lat" />
 	</div>
   <div class="form-row">
 		<label for="node-input-radius"><i class="fa fa-map-marker"></i> Radius </label>
-		<input type="number" id="node-input-radius" />
+		<input type="number" min="0" max="25" id="node-input-radius" />
 	</div>
   <div class="form-row">
 		<label for="node-input-fuelType"><i class="fa fa-dashboard"></i> Fuel Type </label>
 		<input type="text" id="node-input-fuelType" />
+	</div>
+  <div class="form-row">
+		<label for="node-input-sort"><i class="fa fa-sort-amount-desc"></i> Sort by </label>
+		<input type="text" id="node-input-sort" />
 	</div>
   <div class="form-row">
 		<label for="node-input-name"><i class="fa fa-tags"></i> Name </label>

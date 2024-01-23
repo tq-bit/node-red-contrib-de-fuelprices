@@ -42,8 +42,8 @@ async function fetchFuelData(msg, node) {
 
 		const data = response.data;
 		if (config.output.toLowerCase() === 'array') {
-			const array = formatAsArray(data);
-			return [array, null];
+			const array = formatAsArray(data.prices);
+			return [{ ...data, prices: array }, null];
 		}
 
 		if (config.output.toLowerCase() === 'object') {

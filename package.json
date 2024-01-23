@@ -1,6 +1,6 @@
 {
   "name": "@tq-bit/node-red-contrib-de-fuelprices",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Node to fetch fuelprices from the Tankerkoenig API",
   "main": "index.js",
   "scripts": {
@@ -27,7 +27,8 @@
     "version": ">=3.0.2",
     "nodes": {
       "tankerkoenig-config": "tankerkoenig-config/tankerkoenig-config.js",
-      "tankerkoenig-search": "tankerkoenig-search/tankerkoenig-search.js"
+      "tankerkoenig-search": "tankerkoenig-search/tankerkoenig-search.js",
+      "tankerkoenig-prices": "tankerkoenig-prices/tankerkoenig-prices.js"
     }
   },
   "dependencies": {

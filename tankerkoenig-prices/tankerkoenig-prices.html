@@ -1,0 +1,69 @@
+<script type="text/javascript">
+
+  RED.nodes.registerType('tankerkoenig-prices', {
+    category: 'tankerkoenig',
+    name: 'tankerkoenig',
+    color: '#7EC8E3',
+    defaults: {
+      config: { value: "", type: "tankerkoenig-config", required: true },
+      ids: { value: "" },
+      output: { value: "object" },
+      name: { value: "" },
+    },
+    inputs: 1,
+    outputs: 1,
+    icon: 'font-awesome/fa-car',
+    label: function () {
+      return this.name || 'tk-prices';
+    },
+    oneditprepare: function () {
+      $("#node-input-output").typedInput({
+        type: "output", types: [{
+          value: "output",
+          options: [
+            { value: "object", label: "Default object" },
+            { value: "array", label: "Formatted as array" }
+          ]
+        }]
+      })
+    }
+  });
+</script>
+
+<script type="text/html" data-template-name="tankerkoenig-prices">
+  <div class="form-row">
+		<label for="node-input-config"><i class="fa fa-cogs"></i> Config </label>
+		<input type="text" id="node-input-config" />
+	</div>
+  <div class="form-row">
+		<label for="node-input-ids"><i class="fa fa-globe"></i> IDs </label>
+		<input type="text" id="node-input-ids"  />
+	</div>
+  <div class="form-row">
+		<label for="node-input-output"><i class="fa fa-globe"></i> Output type </label>
+		<input type="text" id="node-input-output"  />
+	</div>
+  <div class="form-row">
+		<label for="node-input-name"><i class="fa fa-tags"></i> Name </label>
+		<input type="text" id="node-input-name" />
+	</div>
+  <div class="form-tips">
+    <p>You can use the following message properties to set the longitude, latitude, radius and fuel type using 'change' or 'function' nodes: </p>
+    <ul>
+      <li><code>msg.ids</code></li>
+      <li><code>msg.output</code> ['object', 'array']</li>
+    </ul>
+    <hr/>
+    <p>Data sourced by <a href="https://creativecommons.tankerkoenig.de/">Tankerkoenig</a> is licensed under the Creative Commons license</p>
+    <a href="https://creativecommons.org/licenses/by/4.0/deed.de">License DE</a>
+    <a href="https://creativecommons.org/licenses/by/4.0">License EN</a>
+  </div>
+</script>
+
+<script type="text/html" data-help-name="tankerkoenig-prices">
+
+  <p>
+    Node to request data from the tankerkoening API
+  </p>
+
+</script>

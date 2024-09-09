@@ -3,7 +3,7 @@ name: Release to NPM on push to master branch
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   publish-npm:

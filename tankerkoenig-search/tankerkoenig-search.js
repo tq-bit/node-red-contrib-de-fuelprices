@@ -63,6 +63,7 @@ module.exports = function (RED) {
 			this.on('input', (msg, send, done) => onInput(msg, send, done, this));
 		} catch (error) {
 			RED.log.error(error);
+
 		}
 	}
 	RED.nodes.registerType('tankerkoenig-search', createTankerkoenigClient);

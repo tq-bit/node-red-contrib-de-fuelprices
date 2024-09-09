@@ -4,11 +4,11 @@ const ROOT_URL = 'https://creativecommons.tankerkoenig.de/json/list.php';
 
 function assembleConfig(msg, node) {
 	return {
-		lon: node.lon || msg.lon,
-		lat: node.lat || msg.lat,
-		radius: node.radius || msg.radius,
-		fuelType: node.fuelType || msg.fuelType,
-		sort: node.sort || msg.sort,
+		lon: msg.lon || node.lon,
+		lat: msg.lat || node.lat,
+		radius: msg.radius || msg.radius,
+		fuelType: msg.fuelType || msg.fuelType,
+		sort: msg.sort || msg.sort,
 		apikey: node.apikey,
 	};
 }
@@ -53,8 +53,8 @@ module.exports = function (RED) {
 			RED.nodes.createNode(this, config);
 			this.config = RED.nodes.getNode(config.config);
 			this.apikey = this.config.apikey;
-			this.lon = this.config.lon || '8.531007';
-			this.lat = this.config.lat || '52.019101';
+			this.lon = config.lon || '8.531007';
+			this.lat = config.lat || '52.019101';
 			this.radius = this.config.radius || '5';
 			this.fuelType = this.config.fuelType || 'all';
 			this.sort = this.config.sort || 'price';

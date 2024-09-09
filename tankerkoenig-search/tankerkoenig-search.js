@@ -53,12 +53,12 @@ module.exports = function (RED) {
 			RED.nodes.createNode(this, config);
 			this.config = RED.nodes.getNode(config.config);
 			this.apikey = this.config.apikey;
-			this.lon = config.lon || '8.531007';
-			this.lat = config.lat || '52.019101';
-			this.radius = config.radius || '5';
-			this.fuelType = config.fuelType || 'all';
-			this.sort = config.sort || 'price';
-			this.name = config.name;
+			this.lon = this.config.lon || '8.531007';
+			this.lat = this.config.lat || '52.019101';
+			this.radius = this.config.radius || '5';
+			this.fuelType = this.config.fuelType || 'all';
+			this.sort = this.config.sort || 'price';
+			this.name = this.config.name;
 
 			this.on('input', (msg, send, done) => onInput(msg, send, done, this));
 		} catch (error) {

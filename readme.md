@@ -1,1 +1,1 @@
-# Node Red german fuel price API
+# Node Red fuel price API
